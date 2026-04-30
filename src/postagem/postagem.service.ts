@@ -86,8 +86,7 @@ export class PostagemService {
     return await this.postagemRepository.save(postagem);
   }
 
-  async delete(id: number) {
-    await this.findById(id);
-    return await this.postagemRepository.delete(id);
+  async delete(id: number): Promise<void> {
+    await this.postagemRepository.delete(id);
   }
 }
